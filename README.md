@@ -57,7 +57,7 @@ This project is an end-to-end (E2E) automation testing suite for the OrangeHRM A
    ```
 2. **Using IntelliJ IDEA**:
     - Open the project in IntelliJ.
-    - Navigate to the `LoginRunner` class in the `test` folder.
+    - Navigate to the `Admin_Runner` class in the `test` folder.
     - Run the test using the green play button.
 
 ---
