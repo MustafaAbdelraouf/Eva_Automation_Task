@@ -1,4 +1,4 @@
-# Auromated E2E Scenario For Admin 
+# Automated E2E Scenario For Admin 
 
 This project is an end-to-end (E2E) automation testing suite for the OrangeHRM Admin page. The tests are written using Java, Selenium WebDriver, and Cucumber to validate functionalities like logging in, adding a new user, searching for users, and deleting users.
 
