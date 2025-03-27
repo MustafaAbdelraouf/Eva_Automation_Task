@@ -33,7 +33,7 @@ This project is an end-to-end (E2E) automation testing suite for the OrangeHRM A
 ## Installation and Setup
 1. Clone this repository:
    ```bash
-   git clone https://github.com/MustafaAbdelraouf/E2E_Admin_Automation.git
+   git clone https://github.com/MustafaAbdelraouf/Eva_Automation_Task.git
    ```
 2. Navigate to the project directory:
    ```bash
