@@ -1,51 +1,108 @@
-# AutoTest-Script-01
+# E2E Admin Automation
 
-Welcome to the **AutoTest-Script-01** repository! This project contains automated test scripts designed using the **TestNG** framework. These tests are built to ensure the quality and functionality of web applications through comprehensive and reliable automation.
-
-## Project Overview
-
-The **AutoTest-Script-01** project is designed to automate testing scenarios for web applications. It utilizes TestNG, a popular testing framework for Java, to execute and manage test cases.
-The project uses a **POM** Design Pattern.
-## Project Structure
-
-- `src/main/java/` - Contains Java source code and utility classes (Pages locators) used by the tests.
-- `src/test/java/` - Contains TestNG test cases and test suites.
-- `src/test/java/DBConnections/SQLServerConnection` - Contains connection to SQLServer DB and gets data from it.
-- `src/test/java/DBConnections/MySQLConnection` - Contains connection to MySQL DB and Asserts the data with it.
-- `pom.xml` - Maven configuration file that manages project dependencies and build lifecycle.
+This project is an end-to-end (E2E) automation testing suite for the OrangeHRM Admin page. The tests are written using Java, Selenium WebDriver, and Cucumber to validate functionalities like logging in, adding a new user, searching for users, and deleting users.
 
 ## Features
+- Login to the OrangeHRM platform.
+- Navigate to the Admin page.
+- Add a new admin user.
+- Verify the number of records before and after actions.
+- Search for a user.
+- Delete an existing user.
+- Ensure UI elements behave as expected.
 
-- **Comprehensive Test Coverage:** Includes various test cases to validate different functionalities and Pages (Product Page, Purchase invoice, Purchase invoice return, POS invoice).
-- **Still making the pages and updates in the project**
-- **Easy Configuration:** Configurable test settings and parameters via property files.
-- **Maven Integration:** Managed dependencies and build processes through Maven.
+---
 
-## Getting Started
+## Technologies Used
+- **Java**: Core programming language.
+- **Selenium WebDriver**: For browser automation.
+- **Cucumber**: To define test scenarios in BDD (Behavior-Driven Development) style.
+- **TestNG**: Test execution framework.
+- **Maven**: Dependency management.
 
-To get started with the project, follow these instructions:
+---
 
-### Prerequisites
+## Prerequisites
+- **Java Development Kit (JDK)**: Version 8 or above.
+- **Maven**: Installed and configured.
+- **IntelliJ IDEA** or any IDE with Maven support.
+- A browser (e.g., Chrome) and its corresponding WebDriver.
 
-- **Java Development Kit (JDK) 8 or higher**
-- **Maven 3.6.0 or higher**
-- **IntelliJ IDEA** (or any other IDE that supports Java and Maven)
+---
 
-### Installation
-
-1. **Clone the Repository:**
-
+## Installation and Setup
+1. Clone this repository:
    ```bash
-   git clone https://github.com/readerorg/AutoTest-Script-01.git
-2. **Navigate to the Project Directory**
-    cd AutoTest-Script-01
-3. **Install Project Dependencies**
-    mvn install
-4. **Environment Variable**
-    1. Put the Java JDK to the environment variable
-    2. download maven zip file and extract it
-    3. Put the maven to the environment variable
-    4. download allure zip file and extract it -> to make a testing report
-    5. Put the allure to the environment variable
-5. **Running the script**
-    mvn test -> which will run the testng.xml file using **maven-surefire-plugin** and **maven-compiler-plugin**
+   git clone https://github.com/MustafaAbdelraouf/E2E_Admin_Automation.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd E2E_Admin_Automation
+   ```
+3. Install dependencies using Maven:
+   ```bash
+   mvn clean install
+   ```
+4. Update the `config.properties` file in the `resources` folder:
+    - Set the `baseURL` to the OrangeHRM login URL.
+    - Provide the browser name and WebDriver path.
+
+---
+
+## Running Tests
+1. **Using Maven**:
+   Execute the following command to run all test scenarios:
+   ```bash
+   mvn test
+   ```
+2. **Using IntelliJ IDEA**:
+    - Open the project in IntelliJ.
+    - Navigate to the `LoginRunner` class in the `test` folder.
+    - Run the test using the green play button.
+
+---
+
+## Project Structure
+- **src/main/java**: Contains the reusable pages and base setup.
+    - `ReusePages`: Page Object Models for LoginPage and AdminPage.
+    - `ReuseTests`: Base test setup for browser and WebDriver.
+- **src/test/java**: Contains step definitions for test scenarios.
+    - `E2E_Admin_Steps`: Step definitions using Cucumber.
+- **resources**: Configuration files and property settings.
+
+---
+
+## Key Test Scenarios
+### Login Tests:
+- Open the OrangeHRM login page.
+- Enter valid credentials and login.
+- Verify successful login by checking the dashboard title.
+
+### Admin Page Tests:
+- Navigate to the Admin page.
+- Verify the number of records before and after adding a new user.
+- Add a new user with required details.
+- Search for the newly added user.
+- Delete the new user and verify the record count is updated.
+
+---
+
+## Known Issues
+- Hardcoded data like usernames and passwords.
+- Usage of `Thread.sleep()`, which can be replaced with explicit waits for better reliability.
+
+---
+
+## Future Improvements
+- Use a data-driven approach to test with multiple sets of inputs.
+- Replace `Thread.sleep()` with Selenium explicit waits.
+- Enhance the framework to include parallel test execution.
+
+---
+
+## Author
+**Mustafa Abdelraouf**
+
+For any queries, feel free to reach out through GitHub.
+
+---
